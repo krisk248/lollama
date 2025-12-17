@@ -1,0 +1,66 @@
+# lollama Configuration
+# Local LLM Learning Environment
+
+# Model Configuration
+model:
+  # Recommended for CPU inference with 32GB RAM
+  name: mistral:7b-instruct-q4_K_M
+  temperature: 0.7
+  max_tokens: 2048
+  top_p: 0.9
+  top_k: 40
+  repeat_penalty: 1.1
+
+# RAG Pipeline Configuration
+rag:
+  # Embedding model for vector similarity
+  embedding_model: nomic-embed-text
+  # Text chunking settings
+  chunk_size: 500
+  chunk_overlap: 50
+  # Number of documents to retrieve
+  retrieval_k: 4
+  # Vector store location
+  vector_store_path: ./chroma_db
+
+# Benchmarking Configuration
+benchmark:
+  runs_per_model: 3
+  max_tokens: 100
+  output_dir: ./benchmark_results
+
+# Ollama Server
+ollama_host: http://localhost:11434
+
+# Data Directory
+data_dir: ./data
+
+# Logging Level (DEBUG, INFO, WARNING, ERROR)
+log_level: INFO
+
+# ==============================================
+# Alternative Model Configurations
+# ==============================================
+
+# For limited RAM (16GB):
+# model:
+#   name: llama3.2:3b
+#   temperature: 0.7
+
+# For better quality (with 32GB+ RAM):
+# model:
+#   name: mistral:7b-instruct-q5_K_M
+#   temperature: 0.7
+
+# For coding tasks:
+# model:
+#   name: deepseek-coder:6.7b-instruct-q4_K_M
+#   temperature: 0.3
+
+# ==============================================
+# Quantization Reference
+# ==============================================
+# Q4_K_M: ~4.5 bits, fastest, good quality (RECOMMENDED)
+# Q5_K_M: ~5.5 bits, balanced
+# Q6_K:   ~6 bits, near-original quality
+# Q8_0:   8 bits, minimal quality loss, 2x memory
