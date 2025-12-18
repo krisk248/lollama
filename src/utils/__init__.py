@@ -7,14 +7,14 @@ This module provides common utilities:
 - Helper functions
 """
 
-from .config import load_config, save_config, get_default_config
-from .helpers import format_bytes, format_duration, check_ollama_running
+from .config import load_config, save_config, AppConfig
+from .helpers import format_bytes, format_time_duration, check_ollama_running
 
 __all__ = [
     "load_config",
     "save_config",
-    "get_default_config",
+    "AppConfig",
     "format_bytes",
-    "format_duration",
+    "format_time_duration",
     "check_ollama_running",
 ]

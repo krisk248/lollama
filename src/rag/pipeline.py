@@ -17,7 +17,7 @@ try:
     from langchain_core.prompts import ChatPromptTemplate
     from langchain_core.output_parsers import StrOutputParser
     from langchain_core.runnables import RunnablePassthrough
-    from langchain.schema import Document
+    from langchain_core.documents import Document
 except ImportError as e:
     raise ImportError(
         "LangChain packages required. Run: pip install langchain langchain-ollama"

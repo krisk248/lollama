@@ -12,7 +12,7 @@ from typing import Optional
 
 try:
     from langchain_community.vectorstores import Chroma
-    from langchain.schema import Document
+    from langchain_core.documents import Document
 except ImportError as e:
     raise ImportError(
         "LangChain packages required. Run: pip install langchain langchain-community chromadb"

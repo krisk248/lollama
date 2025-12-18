@@ -10,11 +10,13 @@ This module provides tools for:
 from .dataset_prep import (
     create_instruction_dataset,
     validate_dataset,
-    DatasetExample,
+    TrainingExample,
+    DatasetConfig,
 )
 
 __all__ = [
     "create_instruction_dataset",
     "validate_dataset",
-    "DatasetExample",
+    "TrainingExample",
+    "DatasetConfig",
 ]

@@ -17,11 +17,11 @@ try:
         PyPDFLoader,
         TextLoader,
     )
-    from langchain.text_splitter import RecursiveCharacterTextSplitter
-    from langchain.schema import Document
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+    from langchain_core.documents import Document
 except ImportError as e:
     raise ImportError(
-        "LangChain packages required. Run: pip install langchain langchain-community pypdf"
+        "LangChain packages required. Run: pip install langchain langchain-community langchain-text-splitters pypdf"
     ) from e
 
 
